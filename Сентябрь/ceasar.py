@@ -1,0 +1,5 @@
+alphabet = input()
+shat = int(input()) % len(alphabet)
+print(alphabet[shat:] + alphabet[:shat])
+print(alphabet)
+print(alphabet[-shat:] + alphabet[:-shat])
