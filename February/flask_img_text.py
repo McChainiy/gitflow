@@ -118,5 +118,27 @@ def bootstrap():
                 '''.format(url_for('static', filename='img/fon.jpg'), url_for('static', filename='img/fon_blue.jpg'), 'https://image.tmdb.org/t/p/original/gK8xfRGEpShOqIJZOnbaiZSRCwz.jpg')
 
 
+
+@app.route('/text_in_alert/<message>')
+def greetings(message):
+    return '''<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width,
+                    initial-scale=1, shrink-to-fit=no">
+                    <link rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                  </head>
+                  <body>
+                    <div class="alert alert-primary" role="alert">
+                      {}
+                    </div>
+                  </body>
+                </html>'''.format(message)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
